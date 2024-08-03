@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-
-const SALT_WORK_FACTOR = 10;
 
 const ClienteSchema = new mongoose.Schema({
     email: {
@@ -27,15 +24,5 @@ const ClienteSchema = new mongoose.Schema({
     },
 });
 
-ClienteSchema.pre('save', async function save(next) {
-    if (!this.isModified('clave')) return next();
-    try {
-        const salt = await bcrypt.genSalt(SALT_WORK_FACTOR);
-        this.clave = await bcrypt.hash(this.clave, salt);
-        return next();
-    } catch (err) {
-        return next(err);
-    }
-});
-
 module.exports = mongoose.model("Clientes", ClienteSchema);
+

@@ -3,7 +3,7 @@ require('./config/database.js'); // Importamos el archivo para establecer la con
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/cliente.js');
-const productoRoutes = require('./routes/productos.js');  // Importa las rutas de productos
+const productoRoutes = require('./routes/producto.js');  // Importa las rutas de productos
 dotenv.config();  // Cargar las variables de entorno
 
 const app = express();

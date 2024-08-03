@@ -1,6 +1,6 @@
 const express = require('express');
 const auth = require('../middlewares/auth.js');  // Middleware de autenticación
-const { createProduct, getProducts, getProduct, updateProduct, deleteProduct } = require('../controllers/producto.js');
+const { createProduct, getProducts, getProduct, updateProduct, deleteProduct } = require('../controllers/productoController.js');
 
 const router = express.Router();
 
